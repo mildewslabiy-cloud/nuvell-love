@@ -1,463 +1,759 @@
 
+<```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Личное дело // 001</title>
+  <title>PERSONAL FILE // 001</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="grain"></div>
+<div class="grain"></div>
+<div id="toast"></div>
 
-  <!-- 0 -->
-  <section class="screen active">
-    <div class="classified">ЛИЧНОЕ ДЕЛО // 001</div>
+<!-- 01 -->
+<section class="screen active">
+  <div class="classified">PERSONAL FILE // 001</div>
 
-    <div class="hero">
-      <div class="warning">СОВЕРШЕННО СЕКРЕТНО</div>
-      <h1>Есть кое-что,<br>что тебе нужно знать.</h1>
-      <p>
-        В этом деле содержится информация об одном очень особенном человеке.
-      </p>
-      <button onclick="go(1)">ОТКРЫТЬ ДЕЛО →</button>
-    </div>
-  </section>
+  <div class="hero">
+    <div class="warning">ВНИМАНИЕ</div>
 
-  <!-- 1 -->
-  <section class="screen dark">
-    <div class="classified">ТРЕБУЕТСЯ ДОСТУП</div>
+    <h1>Ты действительно сюда зашла?</h1>
 
-    <div class="hero">
-      <div class="warning">ПРОВЕРКА ЛИЧНОСТИ</div>
-      <h2>Ты точно хочешь<br>продолжить?</h2>
-      <p>
-        После открытия пути назад не будет.
-      </p>
+    <p>
+      Дальнейшее содержимое предназначено только для одного человека.
+    </p>
 
-      <div class="choices two">
-        <button onclick="go(2)">ДА</button>
-        <button onclick="wrong('Поздно. Ты уже нажала «ДА».')">НЕТ</button>
-      </div>
-    </div>
-  </section>
+    <button onclick="go(1)">Да</button>
+  </div>
+</section>
 
-  <!-- 2 -->
-  <section class="screen">
-    <div class="classified">ВОПРОС // 01</div>
 
-    <div class="question">
-      <div class="eyebrow">Вопрос 01</div>
-      <h2>Кто самый милый человек в этом деле?</h2>
+<!-- 02 -->
+<section class="screen">
+  <div class="classified">ACCESS GRANTED</div>
 
-      <div class="choices">
-        <button onclick="go(3)">Ты.</button>
-        <button onclick="wrong('Неверно. Попробуй ещё раз.')">Кто-то другой</button>
-        <button onclick="wrong('Ошибка системы. Такого варианта не существует.')">Никто</button>
-      </div>
-    </div>
-  </section>
+  <div class="question">
+    <div class="warning">Хорошо.</div>
 
-  <!-- 3 -->
-  <section class="screen dark">
-    <div class="classified">ОТВЕТ ПРИНЯТ</div>
+    <h2>Тогда у меня к тебе несколько вопросов.</h2>
 
-    <div class="text-story">
-      <div class="stamp">ВЕРНО</div>
-      <h2>Отлично.</h2>
-      <p>
-        Твой ответ записан и успешно подтверждён.
-      </p>
-      <p>
-        Хотя, если честно, другого правильного ответа здесь и не было.
-      </p>
+    <button onclick="go(2)">Ну давай</button>
+  </div>
+</section>
 
-      <button onclick="go(4)">ПРОДОЛЖИТЬ →</button>
-    </div>
-  </section>
 
-  <!-- 4 -->
-  <section class="screen">
-    <div class="classified">ОБЪЕКТ // 001</div>
+<!-- 03 -->
+<section class="screen">
+  <div class="classified">QUESTION // 01</div>
 
-    <div class="split">
-      <div>
-        <div class="eyebrow">Профиль объекта</div>
-        <h2>Подозрительно милая.</h2>
-        <p>
-          Интеллект: подозрительно высокий.<br>
-          Улыбка: опасная.<br>
-          Воздействие на одного конкретного человека: значительное.
-        </p>
-      </div>
+  <div class="question">
 
-      <img src="photo2.jpg" class="photo portrait" alt="Фотография">
+    <div class="eyebrow">Вопрос №1</div>
+
+    <h2>Кто ты?</h2>
+
+    <div class="choices">
+
+      <button onclick="wrong('ERROR // Попробуй другой вариант.')">
+        А) Независимая взрослая женщина
+      </button>
+
+      <button onclick="go(3)">
+        Б) Маленькая пуговая девочка
+      </button>
+
     </div>
 
-    <button onclick="go(5)">ДАЛЬШЕ →</button>
-  </section>
+  </div>
+</section>
 
-  <!-- 5 -->
-  <section class="screen dark">
-    <div class="classified">ВОПРОС // 02</div>
 
-    <div class="question">
-      <div class="eyebrow">Вопрос 02</div>
-      <h2>Ты доверяешь человеку, который сделал этот сайт?</h2>
+<!-- 04 -->
+<section class="screen dark">
+  <div class="classified">ERROR // CORRECT ANSWER FOUND</div>
 
-      <div class="choices">
-        <button onclick="go(6)">Да, полностью.</button>
-        <button onclick="wrong('Этот ответ вызывает подозрения.')">Не знаю...</button>
-        <button onclick="wrong('Пожалуйста, пересмотри свои жизненные решения.')">Нет.</button>
-      </div>
-    </div>
-  </section>
+  <div class="split">
 
-  <!-- 6 -->
-  <section class="screen">
-    <div class="classified">УРОВЕНЬ ДОВЕРИЯ</div>
+    <div>
 
-    <div class="text-story">
-      <div class="eyebrow">СТАТУС</div>
-      <h1 class="huge">100%</h1>
-      <p>
-        Доверие подтверждено.
-      </p>
-
-      <div class="energy">
-        СТАТУС ОТНОШЕНИЙ: СТАБИЛЬНЫЙ
-      </div>
-
-      <button onclick="go(7)">ПРОДОЛЖИТЬ →</button>
-    </div>
-  </section>
-
-  <!-- 7 -->
-  <section class="screen">
-    <div class="classified">ДОКАЗАТЕЛЬСТВО // 03</div>
-
-    <div class="split">
-      <img src="photo3.jpg" class="photo portrait" alt="Фотография">
-
-      <div>
-        <div class="eyebrow">Важное доказательство</div>
-        <h2>Нам нужно поговорить.</h2>
-        <p>
-          Похоже, с этим человеком возникла серьёзная проблема.
-        </p>
-        <button onclick="go(8)">НАЧАТЬ РАССЛЕДОВАНИЕ →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8 -->
-  <section class="screen dark">
-    <div class="complaint">
-      <div class="big-x">×</div>
-      <div class="eyebrow">ОФИЦИАЛЬНАЯ ЖАЛОБА</div>
-      <h2>Она слишком милая.</h2>
-
-      <p>
-        Это уже становится серьёзной проблемой.
-      </p>
-
-      <p>
-        Каждая улыбка вызывает необоснованный всплеск счастья.
-        Каждая фотография мешает нормально сосредоточиться.
-      </p>
-
-      <p>
-        Ситуация полностью вышла из-под контроля.
-      </p>
-
-      <button onclick="go(9)">ПОКАЗАТЬ ДОКАЗАТЕЛЬСТВА →</button>
-    </div>
-  </section>
-
-  <!-- 9 -->
-  <section class="screen">
-    <div class="classified">ДЕЛО // ФАКТЫ</div>
-
-    <div class="facts">
-      <div class="eyebrow">Проверенная информация</div>
-      <h2>Доказательств слишком много.</h2>
-
-      <div class="fact-grid">
-
-        <article>
-          <span>ФАКТ 001</span>
-          <h3>Улыбка обнаружена</h3>
-          <p class="small">
-            Мгновенное повышение уровня счастья.
-          </p>
-        </article>
-
-        <article>
-          <span>ФАКТ 002</span>
-          <h3>Глаза обнаружены</h3>
-          <p class="small">
-            Уровень концентрации резко снизился.
-          </p>
-        </article>
-
-        <article>
-          <span>ФАКТ 003</span>
-          <h3>Присутствие обнаружено</h3>
-          <p class="small">
-            Почему-то всё вокруг становится немного лучше.
-          </p>
-        </article>
-
-        <article>
-          <span>ФАКТ 004</span>
-          <h3>Вывод</h3>
-          <p class="small">
-            Разумного объяснения этому пока не найдено.
-          </p>
-        </article>
-
-      </div>
-
-      <button onclick="go(10)">ДАЛЬШЕ →</button>
-    </div>
-  </section>
-
-  <!-- 10 -->
-  <section class="screen dark">
-    <div class="classified">ФОТО-ДОКАЗАТЕЛЬСТВО // 04</div>
-
-    <div class="full-photo">
-      <img src="photo4.jpg" class="photo" alt="Фотография">
-
-      <div class="overlay">
-        <div class="eyebrow">Доказательство 04</div>
-        <h2>Дело становится всё серьёзнее.</h2>
-        <p>
-          Требуется дальнейшее расследование.
-        </p>
-      </div>
-    </div>
-
-    <button onclick="go(11)">ПРОДОЛЖИТЬ →</button>
-  </section>
-
-  <!-- 11 -->
-  <section class="screen">
-    <div class="text-story">
-      <div class="eyebrow">СЕРЬЁЗНЫЙ МОМЕНТ</div>
+      <div class="eyebrow">Правильно.</div>
 
       <h2>
-        На этом этапе нужно быть честным.
+        Хотя весь мир почему-то считает тебя сильной и самостоятельной.
       </h2>
 
       <p>
-        На самом деле этот сайт никогда не был расследованием.
+        А я почему-то вижу маленькую девочку, которую хочется
+        обнять, накормить и спрятать от всего плохого.
+      </p>
+
+      <button onclick="go(4)">Дальше</button>
+
+    </div>
+
+    <img
+      class="photo portrait"
+      src="photo1.jpg"
+      alt="Милая фотография"
+    >
+
+  </div>
+</section>
+
+
+<!-- 05 -->
+<section class="screen">
+
+  <div class="classified">PROFILE // SUBJECT</div>
+
+  <div class="split reverse">
+
+    <img
+      class="photo portrait"
+      src="photo2.jpg"
+      alt="Дерзкая фотография"
+    >
+
+    <div>
+
+      <div class="eyebrow">PROFILE // SUBJECT</div>
+
+      <h2>А вот здесь уже начинается настоящее.</h2>
+
+      <p>Забавно, правда?</p>
+
+      <p>
+        Для других ты — самостоятельная, сильная и та,
+        которая сама со всем справится.
+      </p>
+
+      <p>А потом появился я.</p>
+
+      <p>
+        И почему-то рядом со мной ты показала совсем другую себя.
       </p>
 
       <p>
-        Это был просто очень сложный способ сказать:
+        Ту, которую не каждый видит.
+      </p>
+
+      <p>
+        Милую. Заботливую. Иногда смешную.
+      </p>
+
+      <p>
+        Иногда дерзкую настолько, что хочется спросить:
       </p>
 
       <blockquote>
-        «Ты мне действительно очень нравишься».
+        «Мать, ты вообще нормальная?» 😂
       </blockquote>
 
-      <button onclick="go(12)">ЧИТАТЬ ДАЛЬШЕ →</button>
+      <button onclick="go(5)">Продолжить</button>
+
     </div>
-  </section>
 
-  <!-- 12 -->
-  <section class="screen dark">
-    <div class="text-story">
+  </div>
+</section>
 
-      <div class="eyebrow">ВАЖНЫЙ ВОПРОС</div>
 
-      <h2>Почему именно ты?</h2>
+<!-- 06 -->
+<section class="screen">
 
-      <p>
-        Потому что почему-то именно тебе хочется рассказывать разные вещи.
-      </p>
+  <div class="classified">QUESTION // 02</div>
 
-      <p>
-        Именно тебя хочется видеть.
-        Именно твоё сообщение может изменить настроение.
-      </p>
+  <div class="question">
 
-      <p>
-        И как-то незаметно ты стала для меня важным человеком.
-      </p>
+    <div class="eyebrow">Вопрос №2</div>
 
-      <button onclick="go(13)">ПОСЛЕДНИЙ ВОПРОС →</button>
+    <h2>Ты мне доверяешь?</h2>
+
+    <div class="choices two">
+
+      <button onclick="go(7)">
+        ДА
+      </button>
+
+      <button id="runaway" onclick="wrong('Попробуй ещё раз 😏')">
+        НЕТ
+      </button>
+
     </div>
-  </section>
 
-  <!-- 13 -->
-  <section class="screen">
-    <div class="classified">ВОПРОС // 03</div>
+  </div>
+</section>
 
-    <div class="question">
 
-      <div class="eyebrow">Последний вопрос</div>
+<!-- 07 -->
+<section class="screen dark">
+
+  <div class="classified">TRUST // VERIFIED</div>
+
+  <div class="text-story">
+
+    <div class="eyebrow">Вот.</div>
+
+    <h2>Уже лучше.</h2>
+
+    <p>
+      А ведь когда-то ты вообще никому не хотела доверять.
+    </p>
+
+    <p>
+      И я до сих пор считаю это одной из самых важных вещей,
+      которые ты когда-либо мне дала.
+    </p>
+
+    <h2>Своё доверие.</h2>
+
+    <button onclick="go(7)">
+      Дальше
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- 08 -->
+<section class="screen">
+
+  <div class="classified">PRIVATE // NO JOKES</div>
+
+  <div class="split">
+
+    <img
+      class="photo portrait"
+      src="photo3.jpg"
+      alt="Тёплая фотография"
+    >
+
+    <div>
+
+      <div class="eyebrow">Но есть проблема...</div>
+
+      <h2>Однако...</h2>
+
+      <p>
+        У меня есть одна претензия.
+      </p>
+
+      <button onclick="go(8)">
+        Какая?
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 09 -->
+<section class="screen">
+
+  <div class="classified">WARNING // MINOR COMPLAINT</div>
+
+  <div class="complaint">
+
+    <div class="big-x">!</div>
+
+    <div class="eyebrow">
+      Пункт обвинения №01
+    </div>
+
+    <h2>
+      Ты постоянно пьёшь энергетики.
+    </h2>
+
+    <p class="huge">
+      МАТЬ.
+    </p>
+
+    <p>
+      Это вообще законно?
+    </p>
+
+    <div class="energy">
+      ⚡ ENERGY DETECTED ⚡
+    </div>
+
+    <p>
+      Но ладно.
+    </p>
+
+    <p>
+      Хотя ты смотришь какие-то странные сериалы...
+    </p>
+
+    <p>
+      пьёшь энергетики так, будто это вода...
+    </p>
+
+    <p>
+      иногда ведёшь себя как самая дерзкая женщина на планете...
+    </p>
+
+    <p>
+      я всё равно тебя люблю.
+    </p>
+
+    <button onclick="go(9)">
+      Досье
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- 10 -->
+<section class="screen">
+
+  <div class="classified">PERSONAL FILE // FACTS</div>
+
+  <div class="facts">
+
+    <div class="eyebrow">
+      Некоторые факты о ней
+    </div>
+
+    <div class="fact-grid">
+
+      <article>
+        <span>01</span>
+        <h3>Любит зелёный.</h3>
+      </article>
+
+      <article>
+        <span>02</span>
+        <h3>Имеет двух собак.</h3>
+        <p class="small">
+          Следовательно, официально является человеком
+          с хорошим вкусом.
+        </p>
+      </article>
+
+      <article>
+        <span>03</span>
+        <h3>Энергетики — её постоянный спутник.</h3>
+        <p class="small">
+          К сожалению.
+        </p>
+      </article>
+
+      <article>
+        <span>04</span>
+        <h3>Хочет в Турцию.</h3>
+      </article>
+
+      <article>
+        <span>05</span>
+        <h3>Смотрит странные сериалы.</h3>
+        <p class="small">
+          Я не осуждаю. Я просто фиксирую факт.
+        </p>
+      </article>
+
+    </div>
+
+    <button onclick="go(10)">
+      Дальше
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 11 -->
+<section class="screen">
+
+  <div class="classified">PRIVATE // NO JOKES</div>
+
+  <div class="full-photo">
+
+    <img
+      class="photo"
+      src="photo4.jpg"
+      alt="Особенная фотография"
+    >
+
+    <div class="overlay">
+
+      <h2>Но если серьёзно...</h2>
+
+      <p>
+        Я знаю, что многие видят в тебе сильную девушку.
+      </p>
+
+      <button onclick="go(11)">
+        Дальше
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 12 -->
+<section class="screen">
+
+  <div class="text-story">
+
+    <p>
+      И они не ошибаются.
+    </p>
+
+    <h2>
+      Ты действительно сильная.
+    </h2>
+
+    <p>
+      Но мне нравится другая твоя сторона.
+    </p>
+
+    <p>
+      Та, которая появляется, когда ты наконец
+      чувствуешь себя в безопасности.
+    </p>
+
+    <p>
+      Когда тебе не нужно постоянно быть сильной.
+    </p>
+
+    <h2>
+      Когда можно просто быть собой.
+    </h2>
+
+    <p class="final-line">
+      И, наверное, именно эта твоя сторона стала
+      для меня одной из самых дорогих.
+    </p>
+
+    <button onclick="go(12)">
+      Почему «маленькая»?
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 13 -->
+<section class="screen">
+
+  <div class="text-story">
+
+    <div class="eyebrow">
+      Почему я называю тебя маленькой?
+    </div>
+
+    <p>
+      Не потому что я считаю тебя слабой.
+    </p>
+
+    <p>
+      И точно не потому, что думаю,
+      будто ты сама ничего не можешь.
+    </p>
+
+    <h2>
+      Наоборот.
+    </h2>
+
+    <p>
+      Я знаю, насколько ты сильная.
+    </p>
+
+    <h2>
+      Просто рядом со мной тебе не обязательно
+      всё время быть сильной.
+    </h2>
+
+    <p>
+      Поэтому для всего мира ты можешь быть
+      самостоятельной и сильной.
+    </p>
+
+    <p>
+      А для меня...
+    </p>
+
+    <h2>
+      ты всё равно моя маленькая пуговая девочка.
+    </h2>
+
+    <button onclick="go(13)">
+      Проверка №3
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 14 -->
+<section class="screen">
+
+  <div class="classified">
+    QUESTION // 03
+  </div>
+
+  <div class="question">
+
+    <div class="eyebrow">
+      Последний тест
+    </div>
+
+    <h2>
+      Я твой господин?
+    </h2>
+
+    <div class="choices two">
+
+      <button onclick="go(14)">
+        ДА
+      </button>
+
+      <button onclick="wrong('ERROR // Неправильный ответ 😏')">
+        НЕТ
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 15 -->
+<section class="screen dark">
+
+  <div class="classified">
+    VERDICT // ACCEPTED
+  </div>
+
+  <div class="text-story">
+
+    <div class="stamp">
+      ХОРОШАЯ<br>
+      ДЕВОЧКА
+    </div>
+
+    <h2>
+      Правильный ответ.
+    </h2>
+
+    <p>😏</p>
+
+    <button onclick="go(15)">
+      И всё-таки...
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 16 -->
+<section class="screen">
+
+  <div class="classified">
+    THINGS I LIKE ABOUT YOU
+  </div>
+
+  <div class="compliments">
+
+    <p>
+      Мне нравится, как ты заботишься о тех,
+      кто тебе дорог.
+    </p>
+
+    <p>
+      Мне нравится твоя способность быть одновременно
+      милой и невыносимо дерзкой.
+    </p>
+
+    <p>
+      Мне нравится, что за твоим характером
+      есть невероятно мягкий человек.
+    </p>
+
+    <p>
+      Мне нравится, что рядом со мной
+      ты можешь быть собой.
+    </p>
+
+    <p>
+      Мне нравится даже то,
+      как ты иногда бесишь меня.
+    </p>
+
+    <p>
+      Хотя последнее я официально отрицаю.
+    </p>
+
+    <button onclick="go(16)">
+      5 причин
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 17 -->
+<section class="screen">
+
+  <div class="classified">
+    REASONS // 05
+  </div>
+
+  <div class="reasons">
+
+    <p>
+      <b>01</b>
+      Потому что у меня есть человек,
+      которому я могу сказать «родная».
+    </p>
+
+    <p>
+      <b>02</b>
+      Потому что я знаю ту твою сторону,
+      которую показывают не всем.
+    </p>
+
+    <p>
+      <b>03</b>
+      Потому что ты умеешь заботиться.
+    </p>
+
+    <p>
+      <b>04</b>
+      Потому что с тобой можно и серьёзно поговорить,
+      и полную херню обсуждать через пять минут.
+    </p>
+
+    <p>
+      <b>05</b>
+      Потому что из всех людей именно тебя
+      мне хочется видеть рядом.
+    </p>
+
+    <button onclick="go(17)">
+      И последнее...
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 18 -->
+<section class="screen final">
+
+  <div class="classified">
+    PERSONAL FILE // 001
+  </div>
+
+  <div class="final-content">
+
+    <img
+      class="photo final-photo"
+      src="photo5.jpg"
+      alt="Любимая фотография"
+    >
+
+    <div class="final-copy">
+
+      <div class="eyebrow">
+        Любимая фотография
+      </div>
 
       <h2>
-        Ты хочешь остаться в этой истории?
+        Знаешь...
       </h2>
 
-      <div class="choices">
-        <button onclick="go(14)">Да ❤️</button>
-        <button onclick="wrong('Система настоятельно рекомендует выбрать «ДА».')">
-          Мне нужно подумать...
-        </button>
-        <button onclick="wrong('ОШИБКА: этот ответ не поддерживается системой.')">
-          Нет
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 14 -->
-  <section class="screen dark">
-    <div class="text-story">
-
-      <div class="stamp">ВЕРДИКТ</div>
-
-      <h2>Дело принято.</h2>
-
       <p>
-        После рассмотрения всех имеющихся доказательств
-        остаётся только один вывод.
+        Я не знаю, насколько хорошо у меня получается
+        говорить такие вещи вслух.
       </p>
 
       <p>
-        Я хочу, чтобы ты была в моей жизни.
+        Поэтому решил сделать тебе целый сайт.
       </p>
 
-      <button onclick="go(15)">ПРОДОЛЖИТЬ →</button>
-
-    </div>
-  </section>
-
-  <!-- 15 -->
-  <section class="screen">
-    <div class="compliments">
-
-      <div class="eyebrow">ЧТО МНЕ В ТЕБЕ НРАВИТСЯ</div>
-
-      <h2>Только несколько вещей.</h2>
-
-      <p>Твоя улыбка.</p>
-      <p>Твои глаза.</p>
-      <p>То, как ты смеёшься.</p>
-      <p>То, как рядом с тобой становится спокойно.</p>
-      <p>И просто то, что ты — это ты.</p>
-
-      <button onclick="go(16)">ЕСТЬ ЕЩЁ →</button>
-
-    </div>
-  </section>
-
-  <!-- 16 -->
-  <section class="screen dark">
-    <div class="reasons">
-
-      <div class="eyebrow">ПОЧЕМУ МНЕ НРАВИТСЯ, ЧТО ТЫ РЯДОМ</div>
-
-      <h2>Потому что...</h2>
+      <p>😂</p>
 
       <p>
-        <b>01</b>
-        С тобой обычные моменты ощущаются по-другому.
+        Ты для меня не просто красивая девушка.
       </p>
 
       <p>
-        <b>02</b>
-        Мне нравится разговаривать с тобой, даже когда говорить особо не о чем.
+        Ты человек, рядом с которым мне хочется
+        заботиться, смеяться, дурачиться,
+        разговаривать и просто быть рядом.
       </p>
+
+      <h2>
+        Поэтому если весь мир видит в тебе
+        сильную самостоятельную девушку...
+      </h2>
 
       <p>
-        <b>03</b>
-        Мне нравятся твои маленькие привычки, твои реакции и то, какая ты есть.
+        пусть.
       </p>
+
+      <h2>
+        А я всё равно буду видеть
+        свою маленькую пуговую девочку.
+      </h2>
 
       <p>
-        <b>04</b>
-        И почему-то хочется создавать с тобой ещё больше воспоминаний.
+        И буду рядом.
       </p>
 
-      <button onclick="go(17)">ПОСЛЕДНЕЕ ДЕЛО →</button>
-
-    </div>
-  </section>
-
-  <!-- 17 -->
-  <section class="screen final">
-
-    <div class="final-content">
-
-      <img src="photo5.jpg" class="photo final-photo" alt="Фотография">
-
-      <div class="final-copy">
-
-        <div class="eyebrow">ПОСЛЕДНЕЕ СЛОВО</div>
-
-        <h2>
-          Если ты когда-нибудь спросишь, насколько ты для меня важна...
-        </h2>
-
-        <p>
-          Наверное, я не смогу идеально это объяснить.
-        </p>
-
-        <p>
-          Но я точно знаю, что мне нравится, когда ты есть в моей жизни.
-        </p>
-
-        <p>
-          Мне нравится твоя улыбка.
-          Мне нравится твой голос.
-          Мне нравятся наши разговоры.
-          Мне нравятся наши маленькие моменты.
-        </p>
-
-        <p>
-          И я надеюсь, что их будет ещё очень много.
-        </p>
-
-        <button onclick="go(18)">ЗАКРЫТЬ ДЕЛО →</button>
-
-      </div>
+      <button onclick="go(18)">
+        ❤️ Конец
+      </button>
 
     </div>
 
-  </section>
+  </div>
+</section>
 
-  <!-- 18 -->
-  <section class="screen dark end">
 
-    <div class="end-copy">
+<!-- 19 -->
+<section class="screen dark end">
 
-      <div class="eyebrow">ЛИЧНОЕ ДЕЛО // 001</div>
+  <div class="end-copy">
 
-      <h1>
-        Конец дела<span class="cursor">_</span>
-      </h1>
-
-      <h2>Но надеюсь, что не конец нашей истории.</h2>
-
-      <p>
-        ❤️
-      </p>
-
+    <div class="classified">
+      SYSTEM MESSAGE
     </div>
 
-  </section>
+    <h1>
+      Нет.
+    </h1>
 
-  <div id="toast"></div>
+    <h2>
+      Это не конец.
+    </h2>
 
-  <script src="script.js"></script>
+    <p>
+      Я ещё не закончил тебя любить.
+    </p>
+
+    <div class="cursor">
+      _
+    </div>
+
+  </div>
+
+</section>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
+```
+
